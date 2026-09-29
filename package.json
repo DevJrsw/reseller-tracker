@@ -1,0 +1,12 @@
+{
+  "name": "resellr-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A personal reseller inventory and profit tracker.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101413" />
+  <title>Resellr — Reseller Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="authView" class="auth-shell">
+    <section class="auth-panel">
+      <a class="brand" href="#"><span class="brand-mark">R</span>Resellr</a>
+      <div class="auth-copy"><span class="eyebrow">YOUR RESALE BUSINESS, CLEARLY</span><h1>Know every item’s next best move.</h1><p>Track stock, sales, costs and profit in one calm workspace.</p></div>
+      <div class="auth-metrics"><span><strong>£12,480</strong> tracked profit</span><span><strong>1,250+</strong> items managed</span></div>
+    </section>
+    <section class="auth-card-wrap">
+      <form id="loginForm" class="auth-card">
+        <span class="eyebrow">WELCOME BACK</span><h2>Sign in to Resellr</h2><p>Use your local demo account or create one below.</p>
+        <label>Email<input id="loginEmail" type="email" value="demo@resellr.app" required autocomplete="email"></label>
+        <label>Password<input id="loginPassword" type="password" value="demo1234" required autocomplete="current-password"></label>
+        <button class="primary" type="submit">Sign in <span>→</span></button>
+        <p class="form-switch">New here? <button type="button" data-auth="register">Create an account</button></p>
+        <p id="authMessage" class="auth-message"></p>
+      </form>
+      <form id="registerForm" class="auth-card hidden">
+        <span class="eyebrow">GET STARTED</span><h2>Build a clearer business.</h2><p>Your information stays in this browser until you connect Supabase.</p>
+        <label>Your name<input id="registerName" required placeholder="Alex Morgan" autocomplete="name"></label>
+        <label>Email<input id="registerEmail" type="email" required placeholder="you@example.com" autocomplete="email"></label>
+        <label>Password<input id="registerPassword" type="password" required minlength="6" placeholder="At least 6 characters" autocomplete="new-password"></label>
+        <button class="primary" type="submit">Create account <span>→</span></button>
+        <p class="form-switch">Already registered? <button type="button" data-auth="login">Sign in</button></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar"><a class="brand" href="#"><span class="brand-mark">R</span>Resellr</a><nav id="mainNav">
+      <button class="nav-item active" data-page="dashboard"><i>⌂</i> Overview</button><button class="nav-item" data-page="inventory"><i>□</i> Inventory</button><button class="nav-item" data-page="sales"><i>↗</i> Sales</button><button class="nav-item" data-page="expenses"><i>◫</i> Expenses</button><button class="nav-item" data-page="analytics"><i>⌁</i> Analytics</button>
+    </nav><div class="side-bottom"><button class="nav-item" data-page="settings"><i>⚙</i> Settings</button><button id="signOut" class="nav-item"><i>⇥</i> Sign out</button></div></aside>
+    <section class="workspace"><header><button id="menuButton" class="icon-button menu" aria-label="Open menu">☰</button><div><p id="pageKicker" class="eyebrow">BUSINESS OVERVIEW</p><h1 id="pageTitle">Good morning, Alex</h1></div><div class="header-actions"><button id="themeToggle" class="icon-button" aria-label="Toggle colour theme">◐</button><button id="addButton" class="primary small">+ Add item</button><div class="avatar" id="avatar">A</div></div></header>
+      <div id="pageContent"></div>
+    </section>
+    <nav id="mobileNav" class="mobile-nav"><button class="active" data-page="dashboard">⌂<span>Home</span></button><button data-page="inventory">□<span>Stock</span></button><button data-page="sales">↗<span>Sales</span></button><button data-page="expenses">◫<span>Costs</span></button><button data-page="analytics">⌁<span>Trends</span></button></nav>
+  </div>
+  <dialog id="itemDialog"><form id="itemForm" method="dialog"><div class="modal-head"><div><span class="eyebrow">INVENTORY</span><h2>Add an item</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><div class="form-grid"><label>Item name<input name="name" required placeholder="e.g. Nike Dunk Low"></label><label>Category<select name="category"><option>Sneakers</option><option>Clothing</option><option>Collectibles</option><option>Electronics</option><option>Other</option></select></label><label>Purchase cost (£)<input name="cost" required min="0" step="0.01" type="number" placeholder="85.00"></label><label>Expected sale (£)<input name="price" required min="0" step="0.01" type="number" placeholder="140.00"></label><label>Source<input name="source" placeholder="e.g. Vinted"></label><label>Acquired<input name="date" type="date"></label></div><button class="primary" value="default">Save item <span>→</span></button></form></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
