@@ -1,6 +1,0 @@
-@tailwind base;@tailwind components;@tailwind utilities;
-@layer components{.card{@apply rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200}
-.input{@apply w-full min-h-[44px] rounded-xl border border-slate-300 bg-white px-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand}
-.btn{@apply inline-flex min-h-[44px] items-center justify-center rounded-xl bg-brand px-4 font-medium text-white hover:bg-brand-dark focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 disabled:opacity-60}
-.btn-ghost{@apply inline-flex min-h-[44px] items-center justify-center rounded-xl border border-slate-300 bg-white px-4 font-medium text-slate-800 hover:bg-slate-50}}
-body{@apply bg-slate-50 text-slate-900 antialiased}
